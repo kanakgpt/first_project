@@ -22,7 +22,9 @@ public class StudentController {
     // CREATE - POST /api/student
     @PostMapping
     public ResponseEntity<StudentDto> createStudent(@Valid @RequestBody  StudentDto student) {
+        System.out.println("Inside createStudent");
         StudentDto created = studentService.createStudent(student);
+        System.out.println("Created Student");
         return new ResponseEntity<>(created, HttpStatus.CREATED);
     }
 
